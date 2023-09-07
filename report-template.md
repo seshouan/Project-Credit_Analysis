@@ -12,13 +12,15 @@ In this section, describe the analysis you completed for the machine learning mo
 * Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
 --->
 
-We analyzed the different predictive accuracy of a logistic regression model using an imbalanced data set and a resampling of that data set. The LogisiticRegression model implements regularized logistic regression using the ‘liblinear’ library, ‘newton-cg’, ‘sag’, ‘saga’ and ‘lbfgs’ solvers.<br>
+We analyzed the different predictive accuracy of a logistic regression model using an imbalanced data set and a resampling of that data set. The LogisiticRegression model implements regularized logistic regression using the ‘liblinear’ library, ‘newton-cg’, ‘sag’, ‘saga’ and ‘lbfgs’ solvers.
 
-The data provides a series of data points on a given borrower, along with the loan's risk classification. Our goal is to predict the "loan_status" (0 for healthy and 1 for risky) of a given loan, given the characteristics of the loan and its borrower.<br>
+The data provides a series of data points on a given borrower, along with the loan's risk classification. Our goal is to predict the "loan_status" (0 for healthy and 1 for risky) of a given loan, given the characteristics of the loan and its borrower.
 
 When running "value_counts" on the "loan_status" columns, we realize that there is an imbalance between the 1's and the 0's, so we run our ML model with the original set, as well as with a resampled data set that has the same number of 1's and 0's.
 
 Our approach consisted of first splitting the data into a train and test set, so that we may validate the effectiveness of our model with new data that it hadn't seen. We then instantiated and fit a LogisticRegression model with the training data in order to prep it to make predictions with the test data. We then resampled the data by over-fitting the minority sample of loan_status entries, and reran a LogisticRegression model with the resampled data to compare the results.
+
+**NOTE: We also ran the same analysis with first scaling the data, and obtained different comparisons (see the "(with scaling) credit_risk_resampling.ipynb" file)**
 
 ## Results
 
